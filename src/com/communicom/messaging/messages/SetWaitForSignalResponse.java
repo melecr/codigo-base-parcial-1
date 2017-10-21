@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 import com.communicom.messaging.messages.signals.SignalType;
 
-public class SetWaitForSignalResponse {
+public class SetWaitForSignalResponse extends Mensaje {
 	private int messageNumber;
 	private String sourceAddress;
 	private String targetAddress;

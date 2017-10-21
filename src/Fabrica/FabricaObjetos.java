@@ -1,37 +1,36 @@
 package Fabrica;
-import java.awt.TrayIcon.MessageType;
 
+import com.communicom.messaging.messages.BootstrapOperationRequest;
 import com.communicom.messaging.messages.BootstrapOperationResponse;
 import com.communicom.messaging.messages.Mensaje;
 import com.communicom.messaging.messages.PingServerRequest;
 import com.communicom.messaging.messages.PingServerResponse;
 import com.communicom.messaging.messages.SetWaitForSignalRequest;
 import com.communicom.messaging.messages.SetWaitForSignalResponse;
+import com.communicom.messaging.messages.KindMessage;;
 
 public class FabricaObjetos {
-	public static Mensaje fabricaMensajes(MessageType messageType) {
-
+	public static Mensaje fabricaMensajes(KindMessage kindMessage) {
         Mensaje mensaje;
-
-        switch (messageType) {
-            case PING_SERVER_REQUEST:
-            	mensaje = new PingServerRequest(messageType);
+        switch (kindMessage) {
+        	case pingServerRequest:
+            	mensaje = new PingServerRequest();
                 return mensaje;
-            case PING_SERVER_RESPONSE:
-            	mensaje = new PingServerResponse(messageType);
+            case pingServerResponse:
+            	mensaje = new PingServerResponse();
                 return mensaje;
-            case SET_WAIT_fOR_SIGNAL_REQUEST:
-            	mensaje = new SetWaitForSignalRequest(messageType);
+            case setWaitForSignalRequest:
+            	mensaje = new SetWaitForSignalRequest();
                 return mensaje;
-            case SET_WAIT_FOR_SIGNAL_RESPONSE:
-            	mensaje = new SetWaitForSignalResponse(messageType);
+            case setWaitForSignalResponse:
+            	mensaje = new SetWaitForSignalResponse();
                 return mensaje;
-            case BootstrapOperationResponse:
-            	mensaje = new BootstrapOperationResponse(messageType);
-            case BootstrapOperationRequest = new BootstrapOperationRequest(messageType);
-            default:
-                return null;
+            case bootstrapOperationRequest:
+            	mensaje = new BootstrapOperationResponse();
+            case boostrapOperationResponse:
+            	mensaje = new BootstrapOperationRequest();
         }
+        return null;
 
     }
 
