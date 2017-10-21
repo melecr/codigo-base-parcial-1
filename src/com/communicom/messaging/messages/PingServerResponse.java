@@ -2,7 +2,7 @@ package com.communicom.messaging.messages;
 
 import java.time.LocalDateTime;
 
-public class PingServerResponse {
+public abstract class PingServerResponse implements Mensaje {
 	private int messageNumber;
 	private String sourceAddress;
 	private String targetAddress;
