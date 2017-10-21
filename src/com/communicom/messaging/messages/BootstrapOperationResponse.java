@@ -2,7 +2,7 @@ package com.communicom.messaging.messages;
 
 import java.time.LocalDateTime;
 
-public abstract class BootstrapOperationResponse implements Mensaje {
+public class BootstrapOperationResponse extends Mensaje {
 	private int messageNumber;
 	private String sourceAddress;
 	private String targetAddress;

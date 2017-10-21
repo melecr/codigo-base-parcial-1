@@ -3,22 +3,12 @@ package com.communicom.messaging.messages;
 import java.awt.TrayIcon.MessageType;
 import java.time.LocalDateTime;
 
-public interface Mensaje {
+public class Mensaje {
 	String name;
     int messageNumber;
     String sourceAddress;
     String targetAddress;
     LocalDateTime emisionTime;
-    MessageType messageType;
-
-    Mensaje(MessageType messageType) {
-        this.name = "";
-        this.messageNumber = 2;
-        this.sourceAddress = "";
-        this.targetAddress = "";
-        this.emisionTime = LocalDateTime.now();
-        this.messageType = messageType;
-    }
 
     public String getName() {
         return name;
@@ -58,10 +48,6 @@ public interface Mensaje {
 
     public void setEmisionTime(LocalDateTime emisionTime) {
         this.emisionTime = emisionTime;
-    }
-
-    public MessageType getMessageType() {
-        return messageType;
     }
 
 }
